@@ -1,0 +1,12 @@
+﻿body {
+}
+.menu li a {
+width:100px;
+color:blue;
+background-color:skyblue;
+}
+.menu li a:hover {
+width:100px;
+color:black;
+background-color:white;
+}

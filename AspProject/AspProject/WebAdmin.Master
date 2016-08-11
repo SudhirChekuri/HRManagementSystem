@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebAdmin.master.cs" Inherits="AspProject.WebAdmin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Styles/Styles.css" rel="stylesheet" />
+    <link href="Styles/Menustyles.css" rel="stylesheet" />
+    
+  
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        
+        
+    </style>
+</head>
+<body class="background">
+    <form id="form1" runat="server">
+    <div>
+        <div style="width:100%; display: block; text-align: center;">
+        <asp:Image ID="Image1" runat="server" Height="90px" ImageUrl="~/Images/IMG_20150429_155350.jpg" Width="102px" /></div>
+        
+        <asp:Menu ID="Menu1" runat="server" CssClass="menu" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Admin/WebAdminHome.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Employees" Value="Employees" NavigateUrl="~/Admin/WebAdminEmployee.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Manager" Value="Manager" NavigateUrl="~/Admin/WebAdminManager.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="HR" Value="HR" NavigateUrl="~/Admin/WebAdminHR.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Attendence" Value="Attendence" NavigateUrl="~/Admin/WebAdminAttendence.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Payslips" Value="Carrers" NavigateUrl="~/Admin/WebAdminPayslips.aspx"></asp:MenuItem>
+            </Items>
+             <StaticMenuItemStyle CssClass="menu" />
+        </asp:Menu>
+        <asp:HyperLink ID="hypLogout" runat="server" NavigateUrl="~/Admin/AdminLogin.aspx">Logout</asp:HyperLink>
+            
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

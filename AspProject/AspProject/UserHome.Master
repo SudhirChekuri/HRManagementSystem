@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserHome.master.cs" Inherits="AspProject.UserHome" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Styles/Styles.css" rel="stylesheet" />
+   
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 87%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Image ID="Image1" runat="server" Height="132px" ImageUrl="~/Images/horse.jpg" Width="148px" />
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" style="text-align:right">
+                    <asp:Label ID="Label2" runat="server" Text="."></asp:Label>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lblogout" runat="server" Text="Logout" OnClick="lblogout_Click"></asp:LinkButton>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <asp:Menu ID="Menu1" runat="server" CssClass="menu" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/User/UserHome.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Profile" Value="Profile" NavigateUrl="~/User/UserProfile.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Leaves" Value="Leaves" NavigateUrl="~/User/UserLeaves.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Payslips" Value="Payslips" NavigateUrl="~/User/UserPayslips.aspx"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <br />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

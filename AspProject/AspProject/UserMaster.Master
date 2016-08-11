@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="AspProject.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Styles/Styles.css" rel="stylesheet" />
+   
+   
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body  class="background">
+    <form id="form1" runat="server">
+    <div>
+        <div>
+        <asp:Image ID="Image1" runat="server" Height="84px" ImageUrl="~/Images/BENTLEY.jpg" Width="99px" /></div>
+        <div>
+        <asp:Menu ID="Menu1" CssClass="menu" runat="server" OnMenuItemClick="Menu1_MenuItemClick" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/default.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/User/UserLogin.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="AboutUs" Value="AboutUs" NavigateUrl="~/User/AboutUs.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="ContactUs" Value="ContactUs" NavigateUrl="~/User/ContactUs.aspx"></asp:MenuItem>
+            </Items>
+            <StaticMenuItemStyle CssClass="menu" />
+        </asp:Menu>
+            </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

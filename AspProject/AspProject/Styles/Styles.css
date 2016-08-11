@@ -1,0 +1,33 @@
+﻿ .background {
+        background-color:lightblue;
+        }
+
+#form1 {
+width:1000px;
+margin:0px auto;
+background-color:lightpink;
+}
+
+.btn {
+background-color:black;
+color:white;
+}
+    .btn:hover {
+        background-color:white;
+color:black;
+    }
+    input#ContentPlaceHolder1_Button1:hover {
+        background-color: #000 !important;
+        color: #fff !important;
+    }
+
+.menu li a {
+width:150px;
+color:black;
+background-color:skyblue;
+}
+.menu li a:hover {
+width:150px;
+color:black;
+background-color:white;
+}

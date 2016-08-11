@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminHome.master.cs" Inherits="AspProject.AdminHome" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <link href="Styles/Styles.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <style type="text/css">
+         .auto-style1 {
+             width: 100%;
+         }
+         .auto-style2 {
+             width: 857px;
+         }
+     </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+        <br />
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="."></asp:Label>
+                </td>
+            </tr>
+        </table>
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

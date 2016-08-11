@@ -1,0 +1,14 @@
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\bin\Debug\BAL.dll
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\bin\Debug\BAL.pdb
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\bin\Debug\DAL.dll
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\bin\Debug\DAL.pdb
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\obj\Debug\BAL.dll
+C:\Users\hp pc\documents\visual studio 2012\Projects\AspProject\BAL\obj\Debug\BAL.pdb
+C:\Sudhir\Work\ASPProject\AspProject\BAL\bin\Debug\BAL.dll
+C:\Sudhir\Work\ASPProject\AspProject\BAL\bin\Debug\BAL.pdb
+C:\Sudhir\Work\ASPProject\AspProject\BAL\bin\Debug\DAL.dll
+C:\Sudhir\Work\ASPProject\AspProject\BAL\bin\Debug\DAL.pdb
+C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.dll
+C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.pdb

@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ED17CC1-52F4-4113-8C21-3CCC721955BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AspProject</RootNamespace>
+    <AssemblyName>AspProject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\Adminhome.aspx" />
+    <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\HRAttendence.aspx" />
+    <Content Include="Admin\WebAdminAttendence.aspx" />
+    <Content Include="Admin\WebAdminEmployee.aspx" />
+    <Content Include="Admin\WebAdminHome.aspx" />
+    <Content Include="Admin\WebAdminHR.aspx" />
+    <Content Include="Admin\WebAdminManager.aspx" />
+    <Content Include="Admin\WebAdminPayslips.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="HR\HRAttendence.aspx" />
+    <Content Include="HR\HRHome.aspx" />
+    <Content Include="HR\HRPayslips.aspx" />
+    <Content Include="Images\251 copy.jpg" />
+    <Content Include="Images\apple.png" />
+    <Content Include="Images\BENTLEY.jpg" />
+    <Content Include="Images\Calendar.png" />
+    <Content Include="Images\DSC01820 %282%29.JPG" />
+    <Content Include="Images\horse.jpg" />
+    <Content Include="Images\IMG_20150429_155350.jpg" />
+    <Content Include="Images\IMG_20160115_180612.jpg" />
+    <Content Include="Images\jaguar.png" />
+    <Content Include="Images\jaguar1.png" />
+    <Content Include="Managers\ManagerHome.aspx" />
+    <Content Include="Managers\ManagerLeaves.aspx" />
+    <Content Include="Managers\ManagersEmployee.aspx" />
+    <Content Include="Payslips\sankara.jpg" />
+    <Content Include="SQLQueries.txt" />
+    <Content Include="Styles\Menustyles.css" />
+    <Content Include="Styles\Styles.css" />
+    <Content Include="User\AboutUs.aspx" />
+    <Content Include="User\ContactUs.aspx" />
+    <Content Include="User\Register.aspx" />
+    <Content Include="User\UserHome.aspx" />
+    <Content Include="User\UserLeaves.aspx" />
+    <Content Include="User\UserLogin.aspx" />
+    <Content Include="User\UserPayslips.aspx" />
+    <Content Include="User\UserProfile.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminHome.Master.cs">
+      <DependentUpon>AdminHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.Master.designer.cs">
+      <DependentUpon>AdminHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Adminhome.aspx.cs">
+      <DependentUpon>Adminhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Adminhome.aspx.designer.cs">
+      <DependentUpon>Adminhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HRAttendence.aspx.cs">
+      <DependentUpon>HRAttendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HRAttendence.aspx.designer.cs">
+      <DependentUpon>HRAttendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminAttendence.aspx.cs">
+      <DependentUpon>WebAdminAttendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminAttendence.aspx.designer.cs">
+      <DependentUpon>WebAdminAttendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminEmployee.aspx.cs">
+      <DependentUpon>WebAdminEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminEmployee.aspx.designer.cs">
+      <DependentUpon>WebAdminEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminHome.aspx.cs">
+      <DependentUpon>WebAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminHome.aspx.designer.cs">
+      <DependentUpon>WebAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminHR.aspx.cs">
+      <DependentUpon>WebAdminHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminHR.aspx.designer.cs">
+      <DependentUpon>WebAdminHR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminManager.aspx.cs">
+      <DependentUpon>WebAdminManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminManager.aspx.designer.cs">
+      <DependentUpon>WebAdminManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebAdminPayslips.aspx.cs">
+      <DependentUpon>WebAdminPayslips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebAdminPayslips.aspx.designer.cs">
+      <DependentUpon>WebAdminPayslips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HRMaster.Master.cs">
+      <DependentUpon>HRMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HRMaster.Master.designer.cs">
+      <DependentUpon>HRMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HRAttendence.aspx.cs">
+      <DependentUpon>HRAttendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\HRAttendence.aspx.designer.cs">
+      <DependentUpon>HRAttendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HRHome.aspx.cs">
+      <DependentUpon>HRHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\HRHome.aspx.designer.cs">
+      <DependentUpon>HRHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HRPayslips.aspx.cs">
+      <DependentUpon>HRPayslips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\HRPayslips.aspx.designer.cs">
+      <DependentUpon>HRPayslips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ManagerHome.aspx.cs">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Managers\ManagerHome.aspx.designer.cs">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ManagerLeaves.aspx.cs">
+      <DependentUpon>ManagerLeaves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Managers\ManagerLeaves.aspx.designer.cs">
+      <DependentUpon>ManagerLeaves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ManagersEmployee.aspx.cs">
+      <DependentUpon>ManagersEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Managers\ManagersEmployee.aspx.designer.cs">
+      <DependentUpon>ManagersEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserHome.Master.cs">
+      <DependentUpon>UserHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserHome.Master.designer.cs">
+      <DependentUpon>UserHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserLeaves.aspx.cs">
+      <DependentUpon>UserLeaves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserLeaves.aspx.designer.cs">
+      <DependentUpon>UserLeaves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserPayslips.aspx.cs">
+      <DependentUpon>UserPayslips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserPayslips.aspx.designer.cs">
+      <DependentUpon>UserPayslips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin.Master.cs">
+      <DependentUpon>WebAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin.Master.designer.cs">
+      <DependentUpon>WebAdmin.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserMaster.Master" />
+    <Content Include="AdminHome.Master" />
+    <Content Include="HRMaster.Master" />
+    <Content Include="Manager.Master" />
+    <Content Include="UserHome.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WebAdmin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{b2c0e250-0b95-42c2-8b37-f4f7bace16b6}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17702/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿
+create table tbl_leaves(LId int identity, MId int foreign key references Tbl_Manager(MId), EId int foreign key references Tbl_register(Id), FromDate datetime, ToDate datetime, Comments varchar(50), [Status] char)
