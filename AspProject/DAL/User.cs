@@ -59,7 +59,9 @@ namespace DAL
             string strsql = "select a.Id,a.UserName,a.EmailId,a.MId,b.UserName from  tbl_Register a inner join tbl_Manager b on a.MId=b.MId where Id='" + Id + "'";
             SqlCommand cmd = new SqlCommand(strsql, con);
             con.Open();
-            dr = cmd.ExecuteReader();       
+            dr = cmd.ExecuteReader();
+           
+            
 
             return dr;
         }

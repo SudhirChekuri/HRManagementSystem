@@ -30,7 +30,7 @@ namespace AspProject.User
             if (i > 0)
             {
                 Session["UserName"] = txtUsername.Text;
-           //     Session["Password"] = txtPassword.Text;
+                Session["Password"] = txtPassword.Text;
                 Response.Redirect("~/User/UserHome.aspx");
             }
             else

@@ -9,7 +9,6 @@ namespace DAL
 {
     public class HR
     {
-//Connection string for hr class
         SqlConnection con = new SqlConnection(@"Data Source=WINBC250150-FVJ\SQLEXPRESS;Initial Catalog=HRManagement;Integrated Security=True");
 
         public DataTable DGetAllManagers()
