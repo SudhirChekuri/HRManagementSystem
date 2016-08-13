@@ -28,5 +28,14 @@ namespace BAL
         {
             return dm.DApproveEmployee(EId);
         }
+        public SqlDataReader ManagerLeaves(string Username)
+        {
+            return dm.ManagerLeaves(Username);
+        }
+
+        public int GetManagerLeaves(int Id)
+        {
+            return dm.GetManagerLeaves(Id);
+        }
     }
 }

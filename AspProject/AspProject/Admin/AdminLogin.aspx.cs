@@ -12,7 +12,8 @@ namespace AspProject.Admin
     public partial class AdminLogin : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["HRManagementConnectionString"].ConnectionString);
-
+        
+        BAL.WebAdmin bu = new BAL.WebAdmin();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -30,13 +31,14 @@ namespace AspProject.Admin
                 Label1.Text = "Invalid Username/Password";
             }
 
-            string strsql = "select * from tbl_Manager where UserName='"+txtUsername.Text+"' and Password='"+txtPassword.Text+"'";
-            SqlCommand cmd = new SqlCommand(strsql, con);
-            con.Open();
-            int i =Convert.ToInt32(cmd.ExecuteScalar());
+            //string strsql = "select * from tbl_Manager where UserName='"+txtUsername.Text+"' and Password='"+txtPassword.Text+"'";
+            //SqlCommand cmd = new SqlCommand(strsql, con);
+            //con.Open();
+            //int i =Convert.ToInt32(cmd.ExecuteScalar());
 
-            con.Close();
-            if (ddlAdmin.SelectedIndex == 2 && i>0)
+            //con.Close();
+            int i = bu.ManagerLogin(txtUsername.Text, txtPassword.Text);
+            if (ddlAdmin.SelectedIndex == 2 && i >0)
             {
                 Session["UserName"] = txtUsername.Text;
                 Session["Password"] = txtPassword.Text;
@@ -47,12 +49,13 @@ namespace AspProject.Admin
                 Label1.Text = "Invalid username/password";
             }
 
-            string strsql1 = "select * from tbl_HR where UserName='" + txtUsername.Text + "' and Password='" + txtPassword.Text + "'";
-            SqlCommand cmd1 = new SqlCommand(strsql1, con);
-            con.Open();
-            int j = Convert.ToInt32(cmd1.ExecuteScalar());
+            //string strsql1 = "select * from tbl_HR where UserName='" + txtUsername.Text + "' and Password='" + txtPassword.Text + "'";
+            //SqlCommand cmd1 = new SqlCommand(strsql1, con);
+            //con.Open();
+            //int i = Convert.ToInt32(cmd1.ExecuteScalar());
 
-            con.Close();
+           
+            int j = bu.HRLogin(txtUsername.Text, txtPassword.Text);
             if (ddlAdmin.SelectedIndex == 1 && j > 0)
             {
                 Session["UserName"] = txtUsername.Text;

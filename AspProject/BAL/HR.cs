@@ -35,6 +35,24 @@ namespace BAL
 
         }
 
+        public int GetManager(int MId, string UserName)
+        {
+            return dh.GetManager(MId,UserName);
+        }
 
+        public int GetHrmanagersEmployee(string Id)
+        {
+            return dh.GetHrmanagersEmployee(Id);
+        }
+
+        public int UploadPayslip(string Id, string MId, string Year, string Month, string pdf)
+        {
+            return dh.UploadPayslip(Id, MId, Year, Month, pdf);
+        }
+
+        public int GetPayslipDetails(string Id)
+        {
+            return dh.GetPayslipDetails(Id);
+        }
     }
 }

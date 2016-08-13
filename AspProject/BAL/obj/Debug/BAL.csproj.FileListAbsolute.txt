@@ -12,3 +12,10 @@ C:\Sudhir\Work\ASPProject\AspProject\BAL\bin\Debug\DAL.pdb
 C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.dll
 C:\Sudhir\Work\ASPProject\AspProject\BAL\obj\Debug\BAL.pdb
+E:\ASPProject\AspProject\BAL\bin\Debug\BAL.dll
+E:\ASPProject\AspProject\BAL\bin\Debug\BAL.pdb
+E:\ASPProject\AspProject\BAL\bin\Debug\DAL.dll
+E:\ASPProject\AspProject\BAL\bin\Debug\DAL.pdb
+E:\ASPProject\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+E:\ASPProject\AspProject\BAL\obj\Debug\BAL.dll
+E:\ASPProject\AspProject\BAL\obj\Debug\BAL.pdb

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+     @RenderSection("head",false)
+</head>
+<body>
+    @*In Below action link home-content,Index-ActionMethod Name,Home-Controller NAme*@
+     @Html.ActionLink("Home","Index","Home") |
+    @Html.ActionLink("Login","Login","Home") |
+    @Html.ActionLink("AboutUs","AboutUs","Home") |
+    @Html.ActionLink("Contact Us","ContactUs","Home") 
+    <br /><br />
+    <br />
+        @RenderBody()
+    <br />
+    <a href="~/UserHome/Index">UserHome</a> |
+    <a href="~/WebAdmin/Index">WebAdmin</a> |
+    <a href="~/HR/Index">HR</a> |
+    <a href="~/Manager/Index">Manager</a> 
+   
+   
+</body>
+</html>

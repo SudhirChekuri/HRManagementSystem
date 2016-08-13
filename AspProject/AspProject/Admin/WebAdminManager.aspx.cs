@@ -11,7 +11,7 @@ namespace AspProject.Admin
     public partial class WebAdminManager : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["HRManagementConnectionString"].ConnectionString);
-
+        BAL.WebAdmin bw = new BAL.WebAdmin();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -21,36 +21,37 @@ namespace AspProject.Admin
         }
         private void Fillgrid()
         {
-            SqlCommand cmd1 = new SqlCommand("select * from tbl_Manager", con);
-            con.Open();
-            GridView1.DataSource = cmd1.ExecuteReader();
+            //SqlCommand cmd1 = new SqlCommand("select * from tbl_Manager", con);
+            //con.Open();
+            GridView1.DataSource = bw.GetAdminManagers();
             GridView1.DataBind();
-            con.Close();
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             string dt = DateTime.Now.ToString();
-            SqlCommand cmd = new SqlCommand("spManagerdetails", con);
+            int i = bw.CreateManager(txtUsername.Text, txtPassword.Text, txtEmailid.Text);
+            //SqlCommand cmd = new SqlCommand("spManagerdetails", con);
             
 
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@UserName", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-            cmd.Parameters.AddWithValue("@EmailId", txtEmailid.Text);
-            cmd.Parameters.AddWithValue("@CreatedTime", dt);
+            //cmd.Parameters.AddWithValue("@UserName", txtUsername.Text);
+            //cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+            //cmd.Parameters.AddWithValue("@EmailId", txtEmailid.Text);
+            //cmd.Parameters.AddWithValue("@CreatedTime", dt);
 
 
-            SqlParameter outputparameter = new SqlParameter();
-            outputparameter.ParameterName = "@Id";
-            outputparameter.SqlDbType = System.Data.SqlDbType.Int;
-            outputparameter.Direction = System.Data.ParameterDirection.Output;
-            cmd.Parameters.Add(outputparameter);
+            //SqlParameter outputparameter = new SqlParameter();
+            //outputparameter.ParameterName = "@Id";
+            //outputparameter.SqlDbType = System.Data.SqlDbType.Int;
+            //outputparameter.Direction = System.Data.ParameterDirection.Output;
+            //cmd.Parameters.Add(outputparameter);
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+            //con.Open();
+            //cmd.ExecuteNonQuery();
+            //con.Close();
             Fillgrid();
             txtUsername.Text = "";
             txtEmailid.Text = "";

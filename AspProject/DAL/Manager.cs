@@ -9,7 +9,7 @@ namespace DAL
 {
     public class Manager
     {
-        SqlConnection con = new SqlConnection(@"Data Source=WINBC250150-FVJ\SQLEXPRESS;Initial Catalog=HRManagement;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
 
         public string DGetManagerId(string MUsername)
         {
@@ -66,6 +66,31 @@ namespace DAL
             int i = cmd.ExecuteNonQuery();
             con.Close();
             return i;
+        }
+        public SqlDataReader ManagerLeaves(string Username)
+        {
+            string strsqlGetMId = "select MId from Tbl_Manager where UserName='" + Username+ "'";
+            SqlCommand cmdGetMId = new SqlCommand(strsqlGetMId, con);
+            con.Open();
+            string MId = (cmdGetMId.ExecuteScalar()).ToString();
+            con.Close();
+            
+
+            SqlCommand cmd1 = new SqlCommand("select Id,Fromdate,Todate,Status from tbl_leaves where Status='I' and MId='" + MId + "'", con);
+            con.Open();
+          return cmd1.ExecuteReader();
+            
+        }
+
+        public int GetManagerLeaves(int Id)
+        {
+            //int index = Convert.ToInt32(e.CommandArgument.ToString());
+            //string EmployeeId = GridView1.Rows[index].Cells[0].Text;
+            SqlCommand cmd = new SqlCommand("Update tbl_leaves set status='A' where Id='" +Id + "'", con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            return i;
+           
         }
     }
 }

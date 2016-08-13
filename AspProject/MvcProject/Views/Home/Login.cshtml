@@ -1,0 +1,13 @@
+﻿
+<h1>Login Page</h1>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.Label("User Name")
+    @Html.TextBox("Uname")
+    <br /><br />
+    @Html.Label("Password")
+    @Html.Password("pwd")
+    <br /><br />
+    <input type="submit" value="Login"/>
+}

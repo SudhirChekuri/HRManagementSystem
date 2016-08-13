@@ -13,7 +13,7 @@ namespace AspProject.HR
     public partial class HRPayslips : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["HRManagementConnectionString"].ConnectionString);
-
+        BAL.HR bh = new BAL.HR();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -46,14 +46,20 @@ namespace AspProject.HR
         }
         private void Fillgrid()
         {
-            string strsql = "select MId,UserName from tbl_Manager";
-            SqlDataAdapter da = new SqlDataAdapter(strsql, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tbl_Manager");
-            GridView1.DataSource = ds;
-            GridView1.DataBind();
+            //string strsql = "select MId,UserName from tbl_Manager";
+            //SqlDataAdapter da = new SqlDataAdapter(strsql, con);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "tbl_Manager");
+            //GridView1.DataSource = ds;
+            //GridView1.DataBind();
 
-        }
+        }                //GridViewRow row = (GridViewRow)GridView1.Rows[0];
+                //string strsql = "select Id,UserName from tbl_Register where MId='" + GridView1.Rows[index].Cells[0].Text + "'";
+                //SqlDataAdapter da = new SqlDataAdapter(strsql, con);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "tbl_Register");
+                //GridView2.DataSource = ds;
+                //GridView2.DataBind();
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -61,13 +67,7 @@ namespace AspProject.HR
             if (index > -1)
             {
 
-                GridViewRow row = (GridViewRow)GridView1.Rows[0];
-                string strsql = "select Id,UserName from tbl_Register where MId='" + GridView1.Rows[index].Cells[0].Text + "'";
-                SqlDataAdapter da = new SqlDataAdapter(strsql, con);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "tbl_Register");
-                GridView2.DataSource = ds;
-                GridView2.DataBind();
+
 
                 //display mid in label2
                 if (e.CommandName == "Select")
@@ -92,38 +92,39 @@ namespace AspProject.HR
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-           SqlCommand cmd = new SqlCommand("spPayslips", con);
-        //    SqlCommand cmd1 = new SqlCommand("select * from tbl_Payslips", con);
+        //   SqlCommand cmd = new SqlCommand("spPayslips", con);
+        ////    SqlCommand cmd1 = new SqlCommand("select * from tbl_Payslips", con);
 
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            string savedFileName = Server.MapPath("..//Payslips//" +txtEmpid.Text + "_" + ddlYear.Text + "_" + ddlMonth.Text + ".pdf");
+        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            BAL.HR bh = new BAL.HR();
+           string savedFileName = Server.MapPath("..//Payslips//" +txtEmpid.Text + "_" + ddlYear.Text + "_" + ddlMonth.Text + ".pdf");
 
-            FileUpload1.SaveAs(savedFileName);
+        //    FileUpload1.SaveAs(savedFileName);
 
-            cmd.Parameters.AddWithValue("@Id", txtEmpid.Text);
-            cmd.Parameters.AddWithValue("@MId", txtMId.Text);
-            cmd.Parameters.AddWithValue("@Year",ddlYear.Text);
-            cmd.Parameters.AddWithValue("@Month",ddlMonth.Text);
-            cmd.Parameters.AddWithValue("@Pdf", txtEmpid.Text + "_" + ddlYear.Text + "_" + ddlMonth.Text + ".Pdf");
+        //    cmd.Parameters.AddWithValue("@Id", txtEmpid.Text);
+        //    cmd.Parameters.AddWithValue("@MId", txtMId.Text);
+        //    cmd.Parameters.AddWithValue("@Year",ddlYear.Text);
+        //    cmd.Parameters.AddWithValue("@Month",ddlMonth.Text);
+        //    cmd.Parameters.AddWithValue("@Pdf", txtEmpid.Text + "_" + ddlYear.Text + "_" + ddlMonth.Text + ".Pdf");
 
 
-            SqlParameter outputparameter = new SqlParameter();
-            outputparameter.ParameterName = "@PId";
-            outputparameter.SqlDbType = System.Data.SqlDbType.Int;
-            outputparameter.Direction = System.Data.ParameterDirection.Output;
-            cmd.Parameters.Add(outputparameter);
+        //    SqlParameter outputparameter = new SqlParameter();
+        //    outputparameter.ParameterName = "@PId";
+        //    outputparameter.SqlDbType = System.Data.SqlDbType.Int;
+        //    outputparameter.Direction = System.Data.ParameterDirection.Output;
+        //    cmd.Parameters.Add(outputparameter);
 
-            con.Open();
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
-            if (i > 0)
+        //    con.Open();
+        //    int i = cmd.ExecuteNonQuery();
+        //    con.Close();
+            int i = bh.UploadPayslip(txtEmpid.Text, txtMId.Text, ddlYear.Text, ddlMonth.Text, FileUpload1.FileName);
             {
                 Label1.Text = "Successfully Uploaded";
                 Fillgrid();
             }
 
-            //GridView3.DataSource = cmd1.ExecuteReader();
-            //GridView3.DataBind();
+            GridView3.DataSource = bh.UploadPayslip(txtEmpid.Text,txtMId.Text,ddlYear.Text,ddlMonth.Text,FileUpload1.FileName);
+            GridView3.DataBind();
           
 
             //save file in Payslips folder
@@ -131,21 +132,18 @@ namespace AspProject.HR
            
 
 
-        //    txtMId.Text = "";
-          //  txtEmpid.Text = "";
-           // ddlYear.Text = "";
-           // ddlMonth.Text = "";
+       
         }
 
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["Id"] = txtEmpid.Text;
-            string strsql = "select * from tbl_Payslips where Id='" +txtEmpid.Text + "'";
-            SqlCommand cmd = new SqlCommand(strsql, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tbl_Payslips");
-            GridView3.DataSource = ds;
+            //string strsql = "select * from tbl_Payslips where Id='" +txtEmpid.Text + "'";
+            //SqlCommand cmd = new SqlCommand(strsql, con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "tbl_Payslips");
+            GridView3.DataSource = bh.GetPayslipDetails(txtEmpid.Text);
             GridView3.DataBind();
         }
     }

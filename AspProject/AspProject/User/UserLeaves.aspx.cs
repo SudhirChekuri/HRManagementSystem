@@ -18,7 +18,7 @@ namespace AspProject.User
         {
             if (Session["UserName"] != null)
             {
-                // // Session["UserName"] = txtEmployeeid.Text;
+                //txtEmployeeid.Text = Session["UserName"].ToString();
                 //SqlConnection con = new SqlConnection("Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
                 //string strsqlGetId = "select Id from Tbl_Register where UserName='" + Session["UserName"].ToString() + "'";
                 //SqlCommand cmdGetId = new SqlCommand(strsqlGetId, con);
@@ -37,7 +37,7 @@ namespace AspProject.User
                 ////SqlCommand cmd = new SqlCommand(strsql, con);
                 ////con.Open();
                 ////dr = cmd.ExecuteReader();
-                ////ShowData();
+                ShowData();
                 ////con.Close();
             }
             else { Response.Redirect("~/User/UserLogin.aspx"); }
@@ -46,15 +46,17 @@ namespace AspProject.User
 
         private void ShowData()
         {
+            BAL.User bu = new BAL.User();
+            dr = bu.UserLeaves(Session["UserName"].ToString());
             if (dr.Read())
             {
-                
-               
-                txtFromdate.Text = dr[0].ToString();
-                txtTodate.Text = dr[1].ToString();
-                txtSickleaves.Text = dr[2].ToString();
-                txtPrevilizedleaves.Text = dr[3].ToString();
-                txtManagerid.Text = dr[4].ToString();
+
+                txtEmployeeid.Text = dr[0].ToString();
+                txtFromdate.Text = dr[1].ToString();
+                txtTodate.Text = dr[2].ToString();
+                txtSickleaves.Text = dr[3].ToString();
+                txtPrevilizedleaves.Text = dr[4].ToString();
+                txtManagerid.Text = dr[5].ToString();
                
             }
         }
@@ -62,37 +64,22 @@ namespace AspProject.User
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            //string dt = DateTime.Now.ToString();
-            //SqlConnection con = new SqlConnection("Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
-            //SqlCommand cmd = new SqlCommand("spLeaves", con);
-            //SqlCommand cmd1 = new SqlCommand("select * from tbl_leaves where Id="+txtEmployeeid.Text, con);
-
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            //cmd.Parameters.AddWithValue("@Id",txtEmployeeid.Text);
-            //cmd.Parameters.AddWithValue("@Fromdate",txtFrmdate.Text);
-            //cmd.Parameters.AddWithValue("@Todate",txtTdate.Text);
-            //cmd.Parameters.AddWithValue("@Comments",txtCmments.Text);
-            //cmd.Parameters.AddWithValue("@Status","I");
-            //cmd.Parameters.AddWithValue("@MId",txtManagerid.Text);
+            
 
 
-            //SqlParameter outputparameter = new SqlParameter();
-            //outputparameter.ParameterName = "@LId";
-            //outputparameter.SqlDbType = System.Data.SqlDbType.Int;
-            //outputparameter.Direction = System.Data.ParameterDirection.Output;
-            //cmd.Parameters.Add(outputparameter);
+            BAL.User bu = new BAL.User();
+            int i = bu.ApplyLeave(txtManagerid.Text, txtEmployeeid.Text, txtFrmdate.Text, txtTdate.Text, txtCmments.Text,"I");
+            if (i > 0)
+            {
+                Label3.Text = "Successfully Registered";
 
-            //con.Open();
-
-            //int i = cmd.ExecuteNonQuery();
-            //if (i > 0)
-            //{
-            //    Label3.Text = "Successfully Registered";
-            //}
-            //GridView1.DataSource = cmd1.ExecuteReader();
-            //GridView1.DataBind();
-            //con.Close();
+                
+            }
+            else
+            {
+                Label3.Text = "Failed to register";
+            }
+            
            
         
         }
@@ -118,5 +105,7 @@ namespace AspProject.User
             txtTdate.Text = Calendar2.SelectedDate.ToShortDateString();
             Calendar2.Visible = false;
         }
-        }
+
+        
+    }
     }

@@ -32,14 +32,21 @@ namespace BAL
             return dr;
         }
 
-        //public int UserLeaves(string Fromdate, string Todate, string Sickleaves, string Prevelizedleaves, string MId)
-        //{
-        //    DAL.User bu = new DAL.User();
-        //    string dt = DateTime.Now.ToString();
-        //    int i = bu.UserLeaves(Fromdate,Todate,Sickleaves,Prevelizedleaves,MId);
+        public SqlDataReader UserLeaves(string Username)
+        {
 
-        //    return i;
-        //}
+            string dt = DateTime.Now.ToString();
+              SqlDataReader dr = du.UserLeaves(Username);
+
+            return dr;
+        }
+        public int ApplyLeave(string MId, string Id, string Fromdate, string Todate, string Comments, string Status)
+        {
+            string dt = DateTime.Now.ToString();
+            int i = du.ApplyLeave(MId,Id,Fromdate,Todate,Comments,Status);
+
+            return i;
+        }
 
         public string BGetEmployeeId(string EUsername)
         {
@@ -49,5 +56,7 @@ namespace BAL
         {
             return du.DGetPayslips(EId);
         }
+
+    
     }
 }
