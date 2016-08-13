@@ -13,7 +13,7 @@ namespace AspProject.Managers
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["HRManagementConnectionString"].ConnectionString);
         BAL.Manager bm = new BAL.Manager();
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {//
             txtManagerid.Text = bm.BGetManagerId(Session["UserName"].ToString());
             //string strsqlGetMId = "select MId from Tbl_Manager where UserName='" + Session["UserName"].ToString() + "'";
             //SqlCommand cmdGetMId = new SqlCommand(strsqlGetMId, con);
