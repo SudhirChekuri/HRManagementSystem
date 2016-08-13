@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{23D6C587-F111-4473-AD36-02EDC3C4221B}</ProjectGuid>
+    <ProjectGuid>{7D22600A-F9F4-402E-A11B-78D063E18643}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -194,6 +194,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\Logo.png" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -217,31 +218,36 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\MyLayout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\AboutUs.cshtml" />
-    <Content Include="Views\Home\ContactUs.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Shared\UserHomeLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\UserHome\Index.cshtml" />
     <Content Include="Views\UserHome\Profile.cshtml" />
     <Content Include="Views\UserHome\Leaves.cshtml" />
     <Content Include="Views\UserHome\Payslips.cshtml" />
-    <Content Include="Views\Shared\WebAdminLayout.cshtml" />
-    <Content Include="Views\WebAdmin\Index.cshtml" />
-    <Content Include="Views\WebAdmin\Employees.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Shared\_UserHomeLayout.cshtml" />
+    <Content Include="Views\Shared\_WebAdminLayout.cshtml" />
+    <Content Include="Views\WebAdmin\Home.cshtml" />
+    <Content Include="Views\WebAdmin\Employee.cshtml" />
     <Content Include="Views\WebAdmin\Manager.cshtml" />
     <Content Include="Views\WebAdmin\HR.cshtml" />
     <Content Include="Views\WebAdmin\Attendance.cshtml" />
     <Content Include="Views\WebAdmin\Payslips.cshtml" />
-    <Content Include="Views\Shared\HRLayout.cshtml" />
+    <Content Include="Views\WebAdmin\Index.cshtml" />
+    <Content Include="Views\Shared\_HRLayout.cshtml" />
     <Content Include="Views\HR\Index.cshtml" />
     <Content Include="Views\HR\Attendance.cshtml" />
     <Content Include="Views\HR\Payslips.cshtml" />
-    <Content Include="Views\Shared\ManagerLayout.cshtml" />
+    <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Manager\Employees.cshtml" />
     <Content Include="Views\Manager\Leaves.cshtml" />
+    <Content Include="Views\UserHome\UserProfile.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,7 +274,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7784/</IISUrl>
+          <IISUrl>http://localhost:14640/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

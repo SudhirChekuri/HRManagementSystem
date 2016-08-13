@@ -8,37 +8,44 @@ namespace MvcProject.Controllers
 {
     public class HomeController : Controller
     {
-       
+        //
+        // GET: /Home/
 
         public ActionResult Index()
         {
             return View();
         }
-        
+       
+       
         public ActionResult Login()
         {
-           if(Request.RequestType=="POST")
-           {
-               string s1=Request["Uname"];
-               string s2=Request["pwd"];
-               if (s1 == "balaji" && s2 == "balaji")
-               {
-                   Response.Redirect("~/UserHome/Index");
-                   Response.Write("Welcome to"+s1);
-                   
-               }
-               }
-            return View("Login");
+            if (Request.RequestType == "POST")
+            {
+                string s1 = Request["UserName"];
+                string s2 = Request["Password"];
+                if (s1 == "admin" && s2 == "admin")
+                {
+                    Response.Write("welcome to admin");
+                    Response.Redirect("~/UserHome");
+                }
+                else 
+                {
+                    Response.Write("Invalid UserName/Password");
+                }
+            }
+            return View();
         }
-
-        public ActionResult AboutUs()
+        public ActionResult Register()
         {
-            return View("AboutUs");
+            return View();
         }
-
         public ActionResult ContactUs()
         {
-            return View("ContactUs");
+            return View();
+        }
+        public ActionResult AboutUs()
+        {
+            return View();
         }
 
     }

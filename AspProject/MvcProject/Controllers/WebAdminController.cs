@@ -8,36 +8,36 @@ namespace MvcProject.Controllers
 {
     public class WebAdminController : Controller
     {
-        
-
+        //
+        // GET: /WebAdmin/
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Employees()
+        //public ActionResult Home()
+        //{
+        //    return View();
+        //}
+        public ActionResult Employee()
         {
-            return View("Employees");
+            return View();
         }
-
         public ActionResult Manager()
         {
-            return View("Manager");
+            return View();
         }
-
         public ActionResult HR()
         {
-            return View("HR");
+            return View();
         }
-
         public ActionResult Attendance()
         {
-            return View("Attendance");
+            return View();
         }
-
         public ActionResult Payslips()
         {
-            return View("Payslips");
+            return View();
         }
 
     }

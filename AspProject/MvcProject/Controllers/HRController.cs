@@ -8,21 +8,20 @@ namespace MvcProject.Controllers
 {
     public class HRController : Controller
     {
-       
+        //
+        // GET: /HR/
 
         public ActionResult Index()
         {
             return View();
         }
-
         public ActionResult Attendance()
         {
-            return View("Attendance");
+            return View();
         }
-
         public ActionResult Payslips()
         {
-            return View("Payslips");
+            return View();
         }
 
     }

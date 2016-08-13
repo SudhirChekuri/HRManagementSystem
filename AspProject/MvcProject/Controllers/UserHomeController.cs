@@ -8,26 +8,24 @@ namespace MvcProject.Controllers
 {
     public class UserHomeController : Controller
     {
-        
+        //
+        // GET: /UserHome/
 
         public ActionResult Index()
         {
             return View();
         }
-
         public ActionResult Profile()
         {
-            return View("Profile");
+            return View();
         }
-
         public ActionResult Leaves()
         {
-            return View("Leaves");
+            return View();
         }
-
         public ActionResult Payslips()
         {
-            return View("Payslips");
+            return View();
         }
 
     }

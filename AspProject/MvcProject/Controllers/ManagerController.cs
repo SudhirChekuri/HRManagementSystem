@@ -8,20 +8,20 @@ namespace MvcProject.Controllers
 {
     public class ManagerController : Controller
     {
+        //
+        // GET: /Manager/
 
         public ActionResult Index()
         {
             return View();
-
         }
-             public ActionResult Employees()
+        public ActionResult Employees()
         {
-            return View("Employees");
+            return View();
         }
-
-         public ActionResult Leaves()
+        public ActionResult Leaves()
         {
-            return View("Leaves");
+            return View();
         }
 
     }
