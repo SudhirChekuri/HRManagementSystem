@@ -11,7 +11,7 @@ namespace DAL
     {
 
 
-        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ILGP76B;Initial Catalog=HRManagement;Integrated Security=True");
 
         public int RegisterUser(string Username,string EmailId,string Password,string dt,string MId)
         {   

@@ -9,7 +9,7 @@ namespace DAL
 {
     public class Manager
     {
-        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ILGP76B;Initial Catalog=HRManagement;Integrated Security=True");
 
         public string DGetManagerId(string MUsername)
         {

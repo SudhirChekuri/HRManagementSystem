@@ -19,3 +19,10 @@ E:\ASPProject\AspProject\BAL\bin\Debug\DAL.pdb
 E:\ASPProject\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 E:\ASPProject\AspProject\BAL\obj\Debug\BAL.dll
 E:\ASPProject\AspProject\BAL\obj\Debug\BAL.pdb
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\obj\Debug\BAL.dll
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\bin\Debug\BAL.dll
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\bin\Debug\BAL.pdb
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\bin\Debug\DAL.dll
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\bin\Debug\DAL.pdb
+E:\Projects\Repository\HRManagementSystem\AspProject\BAL\obj\Debug\BAL.pdb

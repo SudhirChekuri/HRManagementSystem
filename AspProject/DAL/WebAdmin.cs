@@ -9,7 +9,7 @@ namespace DAL
 {
     public class WebAdmin
     {
-        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ILGP76B;Initial Catalog=HRManagement;Integrated Security=True");
         
 
         public int ManagerLogin(string UserName, string Password)
