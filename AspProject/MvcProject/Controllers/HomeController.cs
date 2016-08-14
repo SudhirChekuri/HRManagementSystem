@@ -8,45 +8,25 @@ namespace MvcProject.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
         {
-            return View();
-        }
-       
-       
-        public ActionResult Login()
-        {
-            if (Request.RequestType == "POST")
-            {
-                string s1 = Request["UserName"];
-                string s2 = Request["Password"];
-                if (s1 == "admin" && s2 == "admin")
-                {
-                    Response.Write("welcome to admin");
-                    Response.Redirect("~/UserHome");
-                }
-                else 
-                {
-                    Response.Write("Invalid UserName/Password");
-                }
-            }
-            return View();
-        }
-        public ActionResult Register()
-        {
-            return View();
-        }
-        public ActionResult ContactUs()
-        {
-            return View();
-        }
-        public ActionResult AboutUs()
-        {
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+
             return View();
         }
 
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your app description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

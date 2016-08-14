@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{070CA8BE-EF66-4CE2-B926-20F3FF2C6464}</ProjectGuid>
+    <ProjectGuid>{607583FF-63EF-4210-8FCE-1ADB7B7B7909}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcProject.Tests</RootNamespace>
@@ -98,12 +98,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcProject\MvcProject.csproj">
+      <Project>{92427D40-24EE-4600-9EE4-68E8084FBF1B}</Project>
+      <Name>MvcProject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
