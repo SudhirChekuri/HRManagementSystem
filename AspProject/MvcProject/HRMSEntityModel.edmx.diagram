@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2726dd5841ad4eb38b4d6948a5d7d4fc" Name="Diagram1">
+        <EntityTypeShape EntityType="HRManagementModel.Tbl_Attendance" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRManagementModel.Tbl_HR" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRManagementModel.Tbl_Leaves" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRManagementModel.Tbl_Manager" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRManagementModel.Tbl_Payslips" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRManagementModel.tbl_Register" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Attenda__MID__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Attendan__Id__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Leaves__Id__117F9D94" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Leaves__Mid__108B795B" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Payslip__MId__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__tbl_Registe__MId__0AD2A005" ManuallyRouted="false" />
+        <AssociationConnector Association="HRManagementModel.FK__Tbl_Payslips__Id__1DE57479" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

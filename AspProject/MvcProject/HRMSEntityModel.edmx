@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HRManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HRManagementModelStoreContainer">
+          <EntitySet Name="Tbl_Attendance" EntityType="HRManagementModel.Store.Tbl_Attendance" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_HR" EntityType="HRManagementModel.Store.Tbl_HR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_Leaves" EntityType="HRManagementModel.Store.Tbl_Leaves" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_Manager" EntityType="HRManagementModel.Store.Tbl_Manager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_Payslips" EntityType="HRManagementModel.Store.Tbl_Payslips" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Register" EntityType="HRManagementModel.Store.tbl_Register" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Tbl_Attenda__MID__182C9B23" Association="HRManagementModel.Store.FK__Tbl_Attenda__MID__182C9B23">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Attendance" EntitySet="Tbl_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Attendan__Id__173876EA" Association="HRManagementModel.Store.FK__Tbl_Attendan__Id__173876EA">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Attendance" EntitySet="Tbl_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Leaves__Id__117F9D94" Association="HRManagementModel.Store.FK__Tbl_Leaves__Id__117F9D94">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Leaves" EntitySet="Tbl_Leaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Leaves__Mid__108B795B" Association="HRManagementModel.Store.FK__Tbl_Leaves__Mid__108B795B">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Leaves" EntitySet="Tbl_Leaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Payslip__MId__1ED998B2" Association="HRManagementModel.Store.FK__Tbl_Payslip__MId__1ED998B2">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Payslips" EntitySet="Tbl_Payslips" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Payslips__Id__1DE57479" Association="HRManagementModel.Store.FK__Tbl_Payslips__Id__1DE57479">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Payslips" EntitySet="Tbl_Payslips" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_Registe__MId__0AD2A005" Association="HRManagementModel.Store.FK__tbl_Registe__MId__0AD2A005">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Tbl_Attendance">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" />
+          <Property Name="MID" Type="int" />
+          <Property Name="SickLeaves" Type="varchar" MaxLength="50" />
+          <Property Name="PrivilegeLeaves" Type="varchar" MaxLength="50" />
+          <Property Name="FromDate" Type="varchar" MaxLength="50" />
+          <Property Name="ToDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_HR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_Leaves">
+          <Key>
+            <PropertyRef Name="Lid" />
+          </Key>
+          <Property Name="Lid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Mid" Type="int" />
+          <Property Name="Id" Type="int" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Comments" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Tbl_Manager">
+          <Key>
+            <PropertyRef Name="Mid" />
+          </Key>
+          <Property Name="Mid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_Payslips">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" />
+          <Property Name="MId" Type="int" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="Month" Type="varchar" MaxLength="50" />
+          <Property Name="Pdf" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Register">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedTime" Type="datetime" />
+          <Property Name="MId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Tbl_Attenda__MID__182C9B23">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Store.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Attendance" Type="HRManagementModel.Store.Tbl_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Attendance">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Attendan__Id__173876EA">
+          <End Role="tbl_Register" Type="HRManagementModel.Store.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Attendance" Type="HRManagementModel.Store.Tbl_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Attendance">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Leaves__Id__117F9D94">
+          <End Role="tbl_Register" Type="HRManagementModel.Store.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Leaves" Type="HRManagementModel.Store.Tbl_Leaves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Leaves">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Leaves__Mid__108B795B">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Store.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Leaves" Type="HRManagementModel.Store.Tbl_Leaves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Leaves">
+              <PropertyRef Name="Mid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Payslip__MId__1ED998B2">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Store.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Payslips" Type="HRManagementModel.Store.Tbl_Payslips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Payslips">
+              <PropertyRef Name="MId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Payslips__Id__1DE57479">
+          <End Role="tbl_Register" Type="HRManagementModel.Store.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Payslips" Type="HRManagementModel.Store.Tbl_Payslips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Payslips">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_Registe__MId__0AD2A005">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Store.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="tbl_Register" Type="HRManagementModel.Store.tbl_Register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="tbl_Register">
+              <PropertyRef Name="MId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spAttendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="MId" Type="int" Mode="In" />
+          <Parameter Name="Sickleaves" Type="varchar" Mode="In" />
+          <Parameter Name="PrivilegeLeaves" Type="varchar" Mode="In" />
+          <Parameter Name="Fromdate" Type="varchar" Mode="In" />
+          <Parameter Name="Todate" Type="varchar" Mode="In" />
+          <Parameter Name="AId" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="spEmployeedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="EmailId" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedTime" Type="datetime" Mode="In" />
+          <Parameter Name="MId" Type="int" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="spHRdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="EmailId" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedTime" Type="datetime" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="spleaves" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MId" Type="int" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="char" Mode="In" />
+          <Parameter Name="LId" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="spManagerdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="EmailId" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedTime" Type="datetime" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="spPayslips" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="MId" Type="int" Mode="In" />
+          <Parameter Name="year" Type="varchar" Mode="In" />
+          <Parameter Name="Month" Type="varchar" Mode="In" />
+          <Parameter Name="Pdf" Type="nvarchar" Mode="In" />
+          <Parameter Name="PId" Type="int" Mode="InOut" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRManagementModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HRManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Attendance" EntityType="HRManagementModel.Tbl_Attendance" />
+          <EntitySet Name="Tbl_HR" EntityType="HRManagementModel.Tbl_HR" />
+          <EntitySet Name="Tbl_Leaves" EntityType="HRManagementModel.Tbl_Leaves" />
+          <EntitySet Name="Tbl_Manager" EntityType="HRManagementModel.Tbl_Manager" />
+          <EntitySet Name="Tbl_Payslips" EntityType="HRManagementModel.Tbl_Payslips" />
+          <EntitySet Name="tbl_Register" EntityType="HRManagementModel.tbl_Register" />
+          <AssociationSet Name="FK__Tbl_Attenda__MID__182C9B23" Association="HRManagementModel.FK__Tbl_Attenda__MID__182C9B23">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Attendance" EntitySet="Tbl_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Attendan__Id__173876EA" Association="HRManagementModel.FK__Tbl_Attendan__Id__173876EA">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Attendance" EntitySet="Tbl_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Leaves__Id__117F9D94" Association="HRManagementModel.FK__Tbl_Leaves__Id__117F9D94">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Leaves" EntitySet="Tbl_Leaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Leaves__Mid__108B795B" Association="HRManagementModel.FK__Tbl_Leaves__Mid__108B795B">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Leaves" EntitySet="Tbl_Leaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Payslip__MId__1ED998B2" Association="HRManagementModel.FK__Tbl_Payslip__MId__1ED998B2">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="Tbl_Payslips" EntitySet="Tbl_Payslips" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_Registe__MId__0AD2A005" Association="HRManagementModel.FK__tbl_Registe__MId__0AD2A005">
+            <End Role="Tbl_Manager" EntitySet="Tbl_Manager" />
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Payslips__Id__1DE57479" Association="HRManagementModel.FK__Tbl_Payslips__Id__1DE57479">
+            <End Role="tbl_Register" EntitySet="tbl_Register" />
+            <End Role="Tbl_Payslips" EntitySet="Tbl_Payslips" />
+          </AssociationSet>
+          <FunctionImport Name="spAttendance">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="MId" Mode="In" Type="Int32" />
+            <Parameter Name="Sickleaves" Mode="In" Type="String" />
+            <Parameter Name="PrivilegeLeaves" Mode="In" Type="String" />
+            <Parameter Name="Fromdate" Mode="In" Type="String" />
+            <Parameter Name="Todate" Mode="In" Type="String" />
+            <Parameter Name="AId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEmployeedetails">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="CreatedTime" Mode="In" Type="DateTime" />
+            <Parameter Name="MId" Mode="In" Type="Int32" />
+            <Parameter Name="Id" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spHRdetails">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="CreatedTime" Mode="In" Type="DateTime" />
+            <Parameter Name="Id" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spleaves">
+            <Parameter Name="MId" Mode="In" Type="Int32" />
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Comments" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="LId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spManagerdetails">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="CreatedTime" Mode="In" Type="DateTime" />
+            <Parameter Name="Id" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spPayslips">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="MId" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="String" />
+            <Parameter Name="Month" Mode="In" Type="String" />
+            <Parameter Name="Pdf" Mode="In" Type="String" />
+            <Parameter Name="PId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Tbl_Attendance">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="MID" Type="Int32" />
+          <Property Name="SickLeaves" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PrivilegeLeaves" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FromDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ToDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tbl_Manager" Relationship="HRManagementModel.FK__Tbl_Attenda__MID__182C9B23" FromRole="Tbl_Attendance" ToRole="Tbl_Manager" />
+          <NavigationProperty Name="tbl_Register" Relationship="HRManagementModel.FK__Tbl_Attendan__Id__173876EA" FromRole="Tbl_Attendance" ToRole="tbl_Register" />
+        </EntityType>
+        <EntityType Name="Tbl_HR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_Leaves">
+          <Key>
+            <PropertyRef Name="Lid" />
+          </Key>
+          <Property Name="Lid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mid" Type="Int32" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Comments" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="tbl_Register" Relationship="HRManagementModel.FK__Tbl_Leaves__Id__117F9D94" FromRole="Tbl_Leaves" ToRole="tbl_Register" />
+          <NavigationProperty Name="Tbl_Manager" Relationship="HRManagementModel.FK__Tbl_Leaves__Mid__108B795B" FromRole="Tbl_Leaves" ToRole="Tbl_Manager" />
+        </EntityType>
+        <EntityType Name="Tbl_Manager">
+          <Key>
+            <PropertyRef Name="Mid" />
+          </Key>
+          <Property Name="Mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_Attendance" Relationship="HRManagementModel.FK__Tbl_Attenda__MID__182C9B23" FromRole="Tbl_Manager" ToRole="Tbl_Attendance" />
+          <NavigationProperty Name="Tbl_Leaves" Relationship="HRManagementModel.FK__Tbl_Leaves__Mid__108B795B" FromRole="Tbl_Manager" ToRole="Tbl_Leaves" />
+          <NavigationProperty Name="Tbl_Payslips" Relationship="HRManagementModel.FK__Tbl_Payslip__MId__1ED998B2" FromRole="Tbl_Manager" ToRole="Tbl_Payslips" />
+          <NavigationProperty Name="tbl_Register" Relationship="HRManagementModel.FK__tbl_Registe__MId__0AD2A005" FromRole="Tbl_Manager" ToRole="tbl_Register" />
+        </EntityType>
+        <EntityType Name="Tbl_Payslips">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="MId" Type="Int32" />
+          <Property Name="Year" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Month" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Pdf" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tbl_Manager" Relationship="HRManagementModel.FK__Tbl_Payslip__MId__1ED998B2" FromRole="Tbl_Payslips" ToRole="Tbl_Manager" />
+          <NavigationProperty Name="tbl_Register" Relationship="HRManagementModel.FK__Tbl_Payslips__Id__1DE57479" FromRole="Tbl_Payslips" ToRole="tbl_Register" />
+        </EntityType>
+        <EntityType Name="tbl_Register">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+          <Property Name="MId" Type="Int32" />
+          <NavigationProperty Name="Tbl_Attendance" Relationship="HRManagementModel.FK__Tbl_Attendan__Id__173876EA" FromRole="tbl_Register" ToRole="Tbl_Attendance" />
+          <NavigationProperty Name="Tbl_Leaves" Relationship="HRManagementModel.FK__Tbl_Leaves__Id__117F9D94" FromRole="tbl_Register" ToRole="Tbl_Leaves" />
+          <NavigationProperty Name="Tbl_Manager" Relationship="HRManagementModel.FK__tbl_Registe__MId__0AD2A005" FromRole="tbl_Register" ToRole="Tbl_Manager" />
+          <NavigationProperty Name="Tbl_Payslips" Relationship="HRManagementModel.FK__Tbl_Payslips__Id__1DE57479" FromRole="tbl_Register" ToRole="Tbl_Payslips" />
+        </EntityType>
+        <Association Name="FK__Tbl_Attenda__MID__182C9B23">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Attendance" Type="HRManagementModel.Tbl_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Attendance">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Attendan__Id__173876EA">
+          <End Role="tbl_Register" Type="HRManagementModel.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Attendance" Type="HRManagementModel.Tbl_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Attendance">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Leaves__Id__117F9D94">
+          <End Role="tbl_Register" Type="HRManagementModel.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Leaves" Type="HRManagementModel.Tbl_Leaves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Leaves">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Leaves__Mid__108B795B">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Leaves" Type="HRManagementModel.Tbl_Leaves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Leaves">
+              <PropertyRef Name="Mid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Payslip__MId__1ED998B2">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="Tbl_Payslips" Type="HRManagementModel.Tbl_Payslips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="Tbl_Payslips">
+              <PropertyRef Name="MId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_Registe__MId__0AD2A005">
+          <End Role="Tbl_Manager" Type="HRManagementModel.Tbl_Manager" Multiplicity="0..1" />
+          <End Role="tbl_Register" Type="HRManagementModel.tbl_Register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Manager">
+              <PropertyRef Name="Mid" />
+            </Principal>
+            <Dependent Role="tbl_Register">
+              <PropertyRef Name="MId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Payslips__Id__1DE57479">
+          <End Role="tbl_Register" Type="HRManagementModel.tbl_Register" Multiplicity="0..1" />
+          <End Role="Tbl_Payslips" Type="HRManagementModel.Tbl_Payslips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Register">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Payslips">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRManagementModelStoreContainer" CdmEntityContainer="HRManagementEntities">
+          <EntitySetMapping Name="Tbl_Attendance">
+            <EntityTypeMapping TypeName="HRManagementModel.Tbl_Attendance">
+              <MappingFragment StoreEntitySet="Tbl_Attendance">
+                <ScalarProperty Name="AId" ColumnName="AId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="SickLeaves" ColumnName="SickLeaves" />
+                <ScalarProperty Name="PrivilegeLeaves" ColumnName="PrivilegeLeaves" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_HR">
+            <EntityTypeMapping TypeName="HRManagementModel.Tbl_HR">
+              <MappingFragment StoreEntitySet="Tbl_HR">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Leaves">
+            <EntityTypeMapping TypeName="HRManagementModel.Tbl_Leaves">
+              <MappingFragment StoreEntitySet="Tbl_Leaves">
+                <ScalarProperty Name="Lid" ColumnName="Lid" />
+                <ScalarProperty Name="Mid" ColumnName="Mid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Manager">
+            <EntityTypeMapping TypeName="HRManagementModel.Tbl_Manager">
+              <MappingFragment StoreEntitySet="Tbl_Manager">
+                <ScalarProperty Name="Mid" ColumnName="Mid" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Payslips">
+            <EntityTypeMapping TypeName="HRManagementModel.Tbl_Payslips">
+              <MappingFragment StoreEntitySet="Tbl_Payslips">
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MId" ColumnName="MId" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Pdf" ColumnName="Pdf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Register">
+            <EntityTypeMapping TypeName="HRManagementModel.tbl_Register">
+              <MappingFragment StoreEntitySet="tbl_Register">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+                <ScalarProperty Name="MId" ColumnName="MId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spAttendance" FunctionName="HRManagementModel.Store.spAttendance" />
+          <FunctionImportMapping FunctionImportName="spEmployeedetails" FunctionName="HRManagementModel.Store.spEmployeedetails" />
+          <FunctionImportMapping FunctionImportName="spHRdetails" FunctionName="HRManagementModel.Store.spHRdetails" />
+          <FunctionImportMapping FunctionImportName="spleaves" FunctionName="HRManagementModel.Store.spleaves" />
+          <FunctionImportMapping FunctionImportName="spManagerdetails" FunctionName="HRManagementModel.Store.spManagerdetails" />
+          <FunctionImportMapping FunctionImportName="spPayslips" FunctionName="HRManagementModel.Store.spPayslips" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
