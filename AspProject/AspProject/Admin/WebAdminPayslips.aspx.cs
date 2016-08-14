@@ -12,16 +12,16 @@ namespace AspProject.Admin
     public partial class WebAdminPayslips : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["HRManagementConnectionString"].ConnectionString);
-
+        BAL.WebAdmin bw = new BAL.WebAdmin();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strsql = "select * from tbl_Attendance";
-            SqlCommand cmd = new SqlCommand(strsql, con);
-            con.Open();
+            //string strsql = "select * from tbl_Attendance";
+            //SqlCommand cmd = new SqlCommand(strsql, con);
+            //con.Open();
 
-            grdPayslips.DataSource = cmd.ExecuteReader();
+            grdPayslips.DataSource = bw.Payslips();
             grdPayslips.DataBind();
-            con.Close();
+            
         }
     }
 }

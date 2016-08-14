@@ -9,7 +9,7 @@ namespace DAL
 {
     public class HR
     {
-        SqlConnection con = new SqlConnection(@"Data Source=WINBC250150-FVJ\SQLEXPRESS;Initial Catalog=HRManagement;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ILGP76B;Initial Catalog=HRManagement;Integrated Security=True");
 
         public DataTable DGetAllManagers()
         {
@@ -121,6 +121,67 @@ namespace DAL
             { con.Open(); }
             int i = cmd.ExecuteNonQuery();
             con.Close();
+            return i;
+        }
+
+        public int GetManager(int MId,string UserName)
+        {
+        string strsql = "select MId,UserName from tbl_Manager";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            con.Open();
+           int i= cmd.ExecuteNonQuery();
+           return i;
+            
+        }
+
+        public int GetHrmanagersEmployee(string Id)
+        {
+         //GridViewRow row = (GridViewRow)GridView1.Rows[0];
+                string strsql = "select Id,UserName from tbl_Register where MId='" +Id  + "'";
+                SqlCommand cmd= new SqlCommand(strsql, con);
+               con.Open();
+            int i=cmd.ExecuteNonQuery();
+                return i;
+
+    }
+
+        public int UploadPayslip(string Id,string MId,string Year,string Month,string pdf)
+        {
+            SqlCommand cmd = new SqlCommand("spPayslips", con);
+            //    SqlCommand cmd1 = new SqlCommand("select * from tbl_Payslips", con);
+
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //string savedFileName = Server.MapPath("..//Payslips//" + txtEmpid.Text + "_" + ddlYear.Text + "_" + ddlMonth.Text + ".pdf");
+
+            //FileUpload1.SaveAs(savedFileName);
+
+            cmd.Parameters.AddWithValue("@Id",Id);
+            cmd.Parameters.AddWithValue("@MId",MId);
+            cmd.Parameters.AddWithValue("@Year",Year);
+            cmd.Parameters.AddWithValue("@Month",Month );
+            cmd.Parameters.AddWithValue("@Pdf", Id + "_" + Year + "_" + Month + ".Pdf");
+
+
+            SqlParameter outputparameter = new SqlParameter();
+            outputparameter.ParameterName = "@PId";
+            outputparameter.SqlDbType = System.Data.SqlDbType.Int;
+            outputparameter.Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add(outputparameter);
+
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+
+
+
+        public int GetPayslipDetails(string Id)
+        {
+
+            string strsql = "select * from tbl_Payslips where Id='" + Id + "'";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            int i = cmd.ExecuteNonQuery();
             return i;
         }
     }

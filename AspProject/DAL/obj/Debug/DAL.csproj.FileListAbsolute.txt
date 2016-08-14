@@ -8,3 +8,13 @@ C:\Sudhir\Work\ASPProject\AspProject\DAL\bin\Debug\DAL.pdb
 C:\Sudhir\Work\ASPProject\AspProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Sudhir\Work\ASPProject\AspProject\DAL\obj\Debug\DAL.dll
 C:\Sudhir\Work\ASPProject\AspProject\DAL\obj\Debug\DAL.pdb
+E:\ASPProject\AspProject\DAL\bin\Debug\DAL.dll
+E:\ASPProject\AspProject\DAL\bin\Debug\DAL.pdb
+E:\ASPProject\AspProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\ASPProject\AspProject\DAL\obj\Debug\DAL.dll
+E:\ASPProject\AspProject\DAL\obj\Debug\DAL.pdb
+E:\Projects\Repository\HRManagementSystem\AspProject\DAL\bin\Debug\DAL.dll
+E:\Projects\Repository\HRManagementSystem\AspProject\DAL\bin\Debug\DAL.pdb
+E:\Projects\Repository\HRManagementSystem\AspProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Projects\Repository\HRManagementSystem\AspProject\DAL\obj\Debug\DAL.dll
+E:\Projects\Repository\HRManagementSystem\AspProject\DAL\obj\Debug\DAL.pdb

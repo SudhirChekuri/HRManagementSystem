@@ -10,8 +10,8 @@ namespace DAL
     public class User
     {
 
-        
-        SqlConnection con = new SqlConnection(@"Data Source=WINBC250150-FVJ\SQLEXPRESS;Initial Catalog=HRManagement;Integrated Security=True");
+
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ILGP76B;Initial Catalog=HRManagement;Integrated Security=True");
 
         public int RegisterUser(string Username,string EmailId,string Password,string dt,string MId)
         {   
@@ -59,61 +59,60 @@ namespace DAL
             string strsql = "select a.Id,a.UserName,a.EmailId,a.MId,b.UserName from  tbl_Register a inner join tbl_Manager b on a.MId=b.MId where Id='" + Id + "'";
             SqlCommand cmd = new SqlCommand(strsql, con);
             con.Open();
-            dr = cmd.ExecuteReader();       
+            dr = cmd.ExecuteReader();
+           
+            
 
             return dr;
         }
 
-        //    public int UserLeaves(string Fromdate, string Todate, string Sickleaves, string Prevelizedleaves, string MId)
-        //    {
-        //        SqlDataReader dr;
-        //        SqlConnection con = new SqlConnection("Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
-        //        string strsqlGetId = "select Id from Tbl_Register where UserName='" + Session["UserName"].ToString() + "'";
-        //        SqlCommand cmdGetId = new SqlCommand(strsqlGetId, con);
-        //        con.Open();
-        //        string Id = (cmdGetId.ExecuteScalar()).ToString();
-        //        con.Close();
-        //        //txtEmployeeid.Text = Id;
-        //        string strsql = "select Fromdate,Todate,Sickleaves,Prevelizedleaves,MId from tbl_Attendence where Id='" + txtEmployeeid.Text + "'";
-        //        SqlCommand cmd = new SqlCommand(strsql, con);
-        //        con.Open();
-        //        dr = cmd.ExecuteReader();
-        //        //ShowData();
-        //        con.Close();
+        public SqlDataReader UserLeaves(string Username)
+        {
+            SqlDataReader dr;
+
+            string strsqlGetId = "select Id from Tbl_Register where UserName='" + Username + "'";
+            SqlCommand cmdGetId = new SqlCommand(strsqlGetId, con);
+            con.Open();
+            string Id = (cmdGetId.ExecuteScalar()).ToString();
+            con.Close();
+
+            string strsql = "select Id,Fromdate,Todate,Sickleaves,PrivilegeLeaves,MId from tbl_Attendance where Id='" + Id + "'";
+            SqlCommand cmd = new SqlCommand(strsql, con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+
+            return dr;
+            
+        }
+             public int ApplyLeave(string MId,string Id,string Fromdate,string Todate,string Comments,string Status)
+        {
+            string dt = DateTime.Now.ToString();
+            SqlCommand cmd = new SqlCommand("spLeaves", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+           
+            cmd.Parameters.AddWithValue("@MId", MId);
+            cmd.Parameters.AddWithValue("@Id", Id);
+            cmd.Parameters.AddWithValue("@Fromdate", Fromdate);
+            cmd.Parameters.AddWithValue("@Todate", Todate);
+            cmd.Parameters.AddWithValue("@Comments", Comments);
+            cmd.Parameters.AddWithValue("@Status", "I");
+            
 
 
-        //        string dt = DateTime.Now.ToString();
-        //        SqlConnection conn = new SqlConnection("Data Source=HP;Initial Catalog=HRManagement;User ID=sa;Password=niit");
-        //        SqlCommand cmd2 = new SqlCommand("spLeaves", conn);
-        //        SqlCommand cmd1 = new SqlCommand("select * from tbl_leaves where Id='" +Id+"'", con);
+            SqlParameter outputparameter = new SqlParameter();
+            outputparameter.ParameterName = "@LId";
+            outputparameter.SqlDbType = System.Data.SqlDbType.Int;
+            outputparameter.Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add(outputparameter);
 
-        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            con.Open();
 
-        //        cmd2.Parameters.AddWithValue("@Id", Id);
-        //        cmd2.Parameters.AddWithValue("@Fromdate", Fromdate);
-        //        cmd2.Parameters.AddWithValue("@Todate", Todate);
-        //        cmd2.Parameters.AddWithValue("@Comments", Comments);
-        //        cmd2.Parameters.AddWithValue("@Status", "I");
-        //        cmd2.Parameters.AddWithValue("@MId", MId);
-
-
-        //        SqlParameter outputparameter = new SqlParameter();
-        //        outputparameter.ParameterName = "@LId";
-        //        outputparameter.SqlDbType = System.Data.SqlDbType.Int;
-        //        outputparameter.Direction = System.Data.ParameterDirection.Output;
-        //        cmd.Parameters.Add(outputparameter);
-
-        //        con.Open();
-
-        //        //int i = cmd.ExecuteNonQuery();
-        //        //if (i > 0)
-        //        //{
-        //        //    Label3.Text = "Successfully Registered";
-        //        //}
-        //        GridView1.DataSource = cmd1.ExecuteReader();
-        //        GridView1.DataBind();
-        //        con.Close();
-        //    }
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+            
+             
+        }
 
         public string DGetEmployeeId(string EUsername)
         {
