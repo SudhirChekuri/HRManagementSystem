@@ -1,0 +1,51 @@
+﻿@model MvcProject.Tbl_Payslips
+
+@{
+    ViewBag.Title = "PayslipsDetails";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>PayslipsDetails</h2>
+
+<fieldset>
+    <legend>Tbl_Payslips</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Year)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Month)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Month)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pdf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pdf)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Payslips", new {Operation="Edit", ID=Model.PId }) |
+    @Html.ActionLink("Back to List", "Payslips/")
+</p>

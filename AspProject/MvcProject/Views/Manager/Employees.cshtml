@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MvcProject.tbl_Register>
+
+@{
+    ViewBag.Title = "Employees";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div style="font-family:Arial">
+    @using (@Html.BeginForm())
+    { 
+    <b>Name</b>
+        @Html.TextBox("SerachTerm",null, new{ID="txtSearch"})
+        <input Type="submit", value="Search" />
+    }
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MId)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MId)
+        </td>
+        <td>
+           @* @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>
+    </div>

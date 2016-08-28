@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MvcProject.Tbl_Payslips>
+@*@model MvcProject.Models.AllModelViews*@
+@*@using MvcProject.Models*@
+@{
+    ViewBag.Title = "Payslips";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>Payslips</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Payslips", new {Operation="Create" })*@
+    
+   @Html.Partial("PayslipsCreate_Partial",new MvcProject.Tbl_Payslips())
+@*     @Html.Partial("Manager_Partial", Model.Manager)*@
+
+        @*@Html.Partial("PAyslips_Partial",Model.Payslips)*@
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pdf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pdf)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Payslips", new {Operation="Edit", ID=item.PId }) |
+            @Html.ActionLink("Details", "Payslips", new {Operation="Details", ID=item.PId }) |
+            @Html.ActionLink("Delete", "Payslips", new { Operation="Delete",ID=item.PId })
+        </td>
+    </tr>
+}
+
+</table>

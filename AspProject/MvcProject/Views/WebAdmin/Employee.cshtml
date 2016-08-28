@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MvcProject.tbl_Register>
+
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_WebAdmin.cshtml";
+}
+
+<h2>Employee</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Employee", new {operation="create" })*@
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MId)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Employee", new { operation="Edit",id=item.Id }) |
+            @Html.ActionLink("Details", "Employee", new {operation="Details", id=item.Id }) |
+            @Html.ActionLink("Delete", "Employee", new {operation="Delete", id=item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>

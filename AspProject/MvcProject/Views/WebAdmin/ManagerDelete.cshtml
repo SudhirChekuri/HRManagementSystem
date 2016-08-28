@@ -1,0 +1,54 @@
+﻿@model MvcProject.Tbl_Manager
+
+@{
+    ViewBag.Title = "ManagerDelete";
+    Layout = "~/Views/Shared/_WebAdmin.cshtml";
+}
+
+<h2>ManagerDelete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Tbl_Manager</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedTime)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

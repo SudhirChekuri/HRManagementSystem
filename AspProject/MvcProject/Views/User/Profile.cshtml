@@ -1,0 +1,58 @@
+﻿@model MvcProject.tbl_Register
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_User.cshtml";
+}
+
+<h2>Profile</h2>
+
+<fieldset>
+    <legend>tbl_Register</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit") |
+    @Html.ActionLink("Back to List", "Index")
+</p>

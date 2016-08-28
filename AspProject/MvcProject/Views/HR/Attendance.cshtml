@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MvcProject.Tbl_Attendance>
+@*@using MvcProject.Models;*@
+@{
+    ViewBag.Title = "Attendance";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>Attendance</h2>
+
+<p>
+   
+      @*@Html.ActionLink("Create New", "Attendance", new { Operation="Create"})*@
+   
+     @Html.Partial("AttendanceCreate_Partial",new MvcProject.Tbl_Attendance())
+    @*@Html.Partial("Manager_Partial", )*@
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SickLeaves)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivilegeLeaves)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MID)
+
+           
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SickLeaves)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivilegeLeaves)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToDate)
+        </td>
+        @{
+            
+            
+            }
+        <td>
+          @*  /Attendance/Edit/3*@
+            @Html.ActionLink("Edit", "Attendance", new { Operation="Edit", ID=item.AId }) |
+            @Html.ActionLink("Details", "Attendance", new {Operation="Details", ID=item.AId }) |
+            @Html.ActionLink("Delete", "Attendance", new {Operation="Delete" ,ID=item.AId })
+            @Html.ActionLink("Select", "Attendance", new {Operation="SelectManager" ,ID=item.MID })
+
+            
+        </td>
+    </tr>
+}
+
+</table>
+

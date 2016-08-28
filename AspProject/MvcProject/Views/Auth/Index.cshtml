@@ -1,0 +1,15 @@
+﻿@using MvcProject.Models
+
+<h2>Login</h2>
+@using(Html.BeginForm())
+{
+
+@Html.Label("UserName")
+@Html.TextBox("Uname")
+<br /><br />
+@Html.Label("Password")
+@Html.Password("Pwd")
+<br /><br />
+<input type="submit" value="Login"  /><a href="/User/Create">Register</a>
+}
+

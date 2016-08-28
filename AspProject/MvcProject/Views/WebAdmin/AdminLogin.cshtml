@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "AdminLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AdminLogin</h2>
+@using (Html.BeginForm())
+{
+    @Html.Label("Username")
+     @Html.TextBox("Username") 
+    <br /><br />
+    @Html.Label("Password")
+    @Html.Password("Password")
+    <br /><br />
+
+    @Html.Label("selecteditem")
+    @Html.DropDownList("JobModel",new List<SelectListItem>
+    {
+        new SelectListItem{Text="WebAdmin", Value="1",Selected=true},
+        new SelectListItem{Text="HR",Value="2"},
+        new SelectListItem{Text="Manager",Value="3"}
+    },"select module")
+    <br /><br />
+    <input type="submit" value="Login" />
+}

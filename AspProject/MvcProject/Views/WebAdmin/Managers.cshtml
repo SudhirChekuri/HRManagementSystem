@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MvcProject.Tbl_Manager>
+
+@{
+    ViewBag.Title = "Managers";
+    Layout = "~/Views/Shared/_WebAdmin.cshtml";
+}
+
+<h2>Managers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Managers", new {operation="create" })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Managers", new { operation="Edit",id=item.Mid }) |
+            @Html.ActionLink("Details", "Managers", new {operation="Details",id=item.Mid  }) |
+            @Html.ActionLink("Delete", "Managers", new {operation="Delete",id=item.Mid  })
+        </td>
+    </tr>
+}
+
+</table>

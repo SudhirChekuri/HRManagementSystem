@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRManagementModel1StoreContainer" CdmEntityContainer="HRManagementEntities1">
+    <EntitySetMapping Name="Tbl_Attendance">
+      <EntityTypeMapping TypeName="HRManagementModel1.Tbl_Attendance">
+        <MappingFragment StoreEntitySet="Tbl_Attendance">
+          <ScalarProperty Name="AId" ColumnName="AId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="SickLeaves" ColumnName="SickLeaves" />
+          <ScalarProperty Name="PrivilegeLeaves" ColumnName="PrivilegeLeaves" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_HR">
+      <EntityTypeMapping TypeName="HRManagementModel1.Tbl_HR">
+        <MappingFragment StoreEntitySet="Tbl_HR">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Leaves">
+      <EntityTypeMapping TypeName="HRManagementModel1.Tbl_Leaves">
+        <MappingFragment StoreEntitySet="Tbl_Leaves">
+          <ScalarProperty Name="Lid" ColumnName="Lid" />
+          <ScalarProperty Name="Mid" ColumnName="Mid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Manager">
+      <EntityTypeMapping TypeName="HRManagementModel1.Tbl_Manager">
+        <MappingFragment StoreEntitySet="Tbl_Manager">
+          <ScalarProperty Name="Mid" ColumnName="Mid" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Payslips">
+      <EntityTypeMapping TypeName="HRManagementModel1.Tbl_Payslips">
+        <MappingFragment StoreEntitySet="Tbl_Payslips">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MId" ColumnName="MId" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Pdf" ColumnName="Pdf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Register">
+      <EntityTypeMapping TypeName="HRManagementModel1.tbl_Register">
+        <MappingFragment StoreEntitySet="tbl_Register">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="MId" ColumnName="MId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spAttendance" FunctionName="HRManagementModel1.Store.spAttendance" />
+    <FunctionImportMapping FunctionImportName="spEmployeedetails" FunctionName="HRManagementModel1.Store.spEmployeedetails" />
+    <FunctionImportMapping FunctionImportName="spHRdetails" FunctionName="HRManagementModel1.Store.spHRdetails" />
+    <FunctionImportMapping FunctionImportName="spleaves" FunctionName="HRManagementModel1.Store.spleaves" />
+    <FunctionImportMapping FunctionImportName="spManagerdetails" FunctionName="HRManagementModel1.Store.spManagerdetails" />
+    <FunctionImportMapping FunctionImportName="spPayslips" FunctionName="HRManagementModel1.Store.spPayslips" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿@model MvcProject.Tbl_Payslips
+
+@{
+    ViewBag.Title = "PayslipsEdit";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>PayslipsEdit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tbl_Payslips</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PId)
+            @Html.ValidationMessageFor(model => model.PId)
+        </div>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MId)
+            @Html.ValidationMessageFor(model => model.MId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Month)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Month)
+            @Html.ValidationMessageFor(model => model.Month)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pdf)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pdf)
+            @Html.ValidationMessageFor(model => model.Pdf)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Payslips/")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
